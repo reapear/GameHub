@@ -1,0 +1,40 @@
+﻿<Window x:Class="GameEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameEditor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel Grid.Column="0">
+            <ToolBarTray DockPanel.Dock="Top">
+                <ToolBar>
+                    <Button Content="NewFile" Click="NewFileButton_Click"/>
+                    <Button Content="Save" Click="SaveButton_Click"/>
+                </ToolBar>
+            </ToolBarTray>
+
+            <Canvas Name="MapCanvas" Background="White"
+                    MouseMove="MapCanvas_MouseMove"
+                    MouseDown="MapCanvas_MouseDown"
+                    MouseUp="MapCanvas_MouseUp"
+                    MouseRightButtonDown="MapCanvas_MouseRightButtonDown"
+                    MouseRightButtonUp="MapCanvas_MouseRightButtonUp"
+                    MouseWheel="MapCanvas_MouseWheel">
+            </Canvas>
+        </DockPanel>
+
+        <StackPanel Grid.Column="1" Background="LightGray">
+            <TextBlock Text="Files" HorizontalAlignment="Center" Margin="10" FontWeight="Bold"/>
+            <TextBox Name="PathTextBox" Margin="10" Text="C:\Your\Directory\Path"/>
+            <Button Content="Refresh" Margin="10" Click="RefreshButton_Click"/>
+            <ListBox Name="FileListBox" Margin="10" SelectionChanged="FileListBox_SelectionChanged"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,31 @@
+﻿<Window x:Class="GameEditor.InputDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:GameEditor"
+        mc:Ignorable="d"
+        Title="InputDialog" Height="150" Width="300">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- 宽度输入 -->
+        <Label Content="宽：" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" />
+        <TextBox x:Name="WidthTextBox" Grid.Row="0" Grid.Column="1" Margin="5" />
+
+        <!-- 高度输入 -->
+        <Label Content="高：" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" />
+        <TextBox x:Name="HeightTextBox" Grid.Row="1" Grid.Column="1" Margin="5" />
+
+        <!-- 确定按钮 -->
+        <Button Content="确定" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Margin="5" Click="OkButton_Click" />
+    </Grid>
+</Window>
